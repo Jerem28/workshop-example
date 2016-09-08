@@ -15,15 +15,15 @@ public class TodosServlet extends HttpServlet {
 	
 	public TodoStorage getStorageService(){
 		//In Memory storage
-		return new TodoStorageInMemory();
+		//return new TodoStorageInMemory();
 		
 		//Use Mysql on Kermit
-//		String login = System.getenv("MYSQL_USER");
-//		String password = System.getenv("MYSQL_PASSWORD");
-//		String host = System.getenv("WORKSHOP_DB_SERVICE_HOST");
-//		String port = System.getenv("WORKSHOP_DB_SERVICE_PORT");
-//		String database = System.getenv("MYSQL_DATABASE");
-//		return new TodoStorageJDBCMysql(host, port, database, login, password);
+		String login = System.getenv("MYSQL_USER");
+		String password = System.getenv("MYSQL_PASSWORD");
+		String host = System.getenv("WORKSHOP_DB_SERVICE_HOST");
+		String port = System.getenv("WORKSHOP_DB_SERVICE_PORT");
+		String database = System.getenv("MYSQL_DATABASE");
+		return new TodoStorageJDBCMysql(host, port, database, login, password);
 	}
 
 	@Override
